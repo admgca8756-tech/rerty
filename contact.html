@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RK Contractor — Contact</title>
+
+<style>
+/* SAME CSS — कोई भी बदलाव नहीं */
+:root{
+  --bg:#0b0b0b;
+  --card:#0f0f10;
+  --muted:#bfb7a9;
+  --gold:#cfa84b;
+  --accent:#ffd67a;
+  --white:#ffffff;
+  --max-w:1200px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#020202,#0b0b0b);
+  font-family:Inter, system-ui;
+  color:var(--muted);
+  padding-top:120px;
+  padding-bottom:80px;
+}
+
+/* TOPBAR */
+.topbar{
+  position:fixed; top:0; left:0; right:0; height:36px;
+  background:linear-gradient(90deg,rgba(0,0,0,0.9),rgba(15,11,8,0.95));
+  color:white;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 14px; z-index:9999;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.chip{
+  background:rgba(255,255,255,0.04);
+  padding:4px 8px; border-radius:999px; color:var(--accent); font-size:12px;
+}
+
+/* HEADER */
+header.site-header{
+  position:fixed; top:36px; left:0; right:0; height:84px;
+  background:linear-gradient(180deg,#131313,#0b0b0b);
+  display:flex; align-items:center; justify-content:center;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  z-index:9998;
+}
+.header-inner{
+  width:100%; max-width:var(--max-w);
+  display:flex; align-items:center; justify-content:space-between;
+}
+.brand{display:flex; align-items:center; gap:14px}
+.brand img{height:56px; border-radius:8px}
+
+/* NAV */
+nav.main-nav{display:flex; gap:18px; align-items:center}
+nav.main-nav a{
+  color:var(--muted); text-decoration:none; padding:8px 6px;
+  font-weight:600; border-radius:6px; font-size:15px;
+}
+
+/*** ACTIVE PAGE (PRO LOOK) ***/
+nav.main-nav a.active{
+  color:white;
+  box-shadow: inset 0 -3px 0 var(--gold);
+  background:rgba(255,255,255,0.03);
+}
+
+.cta{
+  background:linear-gradient(90deg,var(--gold),#f4d47c);
+  padding:10px 14px; border-radius:8px; color:#111;
+  text-decoration:none; font-weight:700;
+}
+
+/* CONTACT GRID */
+.container{max-width:var(--max-w); margin:0 auto; padding:28px 16px}
+.contact-grid{
+  display:grid; grid-template-columns:1fr 380px; gap:18px;
+}
+.contact-card{
+  background:var(--card);
+  padding:18px; border-radius:12px;
+  border:1px solid rgba(255,255,255,0.05);
+  box-shadow:0 6px 18px rgba(0,0,0,0.4);
+}
+
+label{display:block;margin:8px 0 4px;color:var(--muted)}
+input, textarea{
+  width:100%; padding:10px; border-radius:8px;
+  border:1px solid rgba(255,255,255,0.05);
+  background:transparent; color:white;
+}
+textarea{min-height:140px; resize:vertical}
+
+.btn-primary{
+  background:var(--gold); color:#111; padding:10px 14px;
+  border-radius:8px; font-weight:700; border:none; cursor:pointer;
+}
+
+/* FOOTER */
+footer.site-footer{
+  position:fixed; bottom:0; left:0; right:0; height:64px;
+  background:linear-gradient(180deg,#070707,#0b0b0b);
+  display:flex; justify-content:center; align-items:center;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+
+@media(max-width:900px){ .contact-grid{grid-template-columns:1fr} }
+@media(max-width:880px){
+  nav.main-nav{display:none; position:absolute; top:80px; right:12px; flex-direction:column; width:220px; background:#111; padding:12px; border-radius:10px}
+  .burger{display:block}
+}
+.burger{display:none; font-size:22px; background:none; border:none; color:white; cursor:pointer}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div style="display:flex;align-items:center;gap:12px">
+    <span class="chip">Free Site Visit</span>
+    <span>Beawar · Ajmer · Pushkar</span>
+    <span style="opacity:.6">|</span>
+    <a href="tel:+919876543210" style="color:white;text-decoration:none">📞 +91 98765 43210</a>
+  </div>
+
+  <div style="display:flex;gap:10px; align-items:center">
+    <a href="tel:+919876543210" style="color:white;text-decoration:none">📱 Call</a>
+    <a href="https://wa.me/919876543210" target="_blank" style="color:white;text-decoration:none">🟢 WhatsApp</a>
+    <button class="burger" onclick="toggleMenu()">☰</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="https://dummyimage.com/300x100/0b0b0b/cfa84b&text=RK+Contractor">
+      <div style="color:white">
+        <div style="font-weight:700">RK Contractor</div>
+        <div style="font-size:13px;color:var(--muted)">Marble · Granite · Kota Stone · Tiles</div>
+      </div>
+    </div>
+
+    <nav id="mainNav" class="main-nav">
+      <a href="home.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="projects.html">Projects</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a class="cta" href="contact.html">Get Free Estimate</a>
+    </nav>
+  </div>
+</header>
+
+<!-- CONTACT PAGE CONTENT -->
+<main class="container">
+
+  <h1 style="color:white">Contact RK Contractor</h1>
+  <p>Marble, Granite, Kota Stone & Tile Work के लिए Free Site Visit बुक करें।</p>
+
+  <div class="contact-grid">
+
+    <!-- LEFT INFO CARD -->
+    <div>
+      <div class="contact-card">
+        <p><strong style="color:white">📞 Phone:</strong> <a href="tel:+919876543210" style="color:white">+91 98765 43210</a></p>
+        <p><strong style="color:white">🟢 WhatsApp:</strong> <a href="https://wa.me/919876543210" style="color:white">Click to Message</a></p>
+        <p><strong style="color:white">📍 Location:</strong> Beawar · Ajmer · Pushkar</p>
+        <p><strong style="color:white">⏱ Office Time:</strong> 9:00 AM – 7:00 PM (Mon–Sat)</p>
+
+        <a href="https://wa.me/919876543210" target="_blank">
+          <button class="btn-primary" style="margin-top:12px">Request Free Site Visit</button>
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div>
+      <form class="contact-card" onsubmit="sendForm(event)">
+        <label>Your Name</label>
+        <input type="text" id="name" required>
+
+        <label>Your Phone</label>
+        <input type="text" id="phone" required>
+
+        <label>Service Needed</label>
+        <input type="text" id="service">
+
+        <label>Message / Project Details</label>
+        <textarea id="message"></textarea>
+
+        <button class="btn-primary" type="submit" style="margin-top:12px">Send Request</button>
+        <p id="msg" style="margin-top:8px;font-size:13px;"></p>
+      </form>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div style="width:100%;max-width:var(--max-w);display:flex;justify-content:space-between;padding:0 16px">
+    <span>© RK Contractor — Rajasthan</span>
+    <span>Call: +91 98765 43210</span>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  let nav = document.getElementById("mainNav");
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+}
+
+function sendForm(e){
+  e.preventDefault();
+  let name = document.getElementById("name").value.trim();
+  let phone = document.getElementById("phone").value.trim();
+  let service = document.getElementById("service").value.trim();
+  let message = document.getElementById("message").value.trim();
+
+  if(!name || !phone){
+    document.getElementById("msg").textContent = "Please enter name & phone.";
+    document.getElementById("msg").style.color = "red";
+    return;
+  }
+
+  let text = encodeURIComponent(
+    `Hello RK Contractor,%0AName: ${name}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`
+  );
+
+  window.open(`https://wa.me/919876543210?text=${text}`, "_blank");
+  document.getElementById("msg").textContent = "Opening WhatsApp…";
+  document.getElementById("msg").style.color = "var(--gold)";
+}
+</script>
+
+</body>
+</html>
